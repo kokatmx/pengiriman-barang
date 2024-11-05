@@ -19,6 +19,8 @@ class RoleMiddleware
     {
         if (Auth::user()->role === 'admin') {
             return $next($request);
+        } elseif (Auth::user()->role === 'courier') {
+            return $next($request);
         }
         return response()->json('Opps! Kamu tidak punya ijin akses.');
     }

@@ -23,8 +23,10 @@
                 <!-- Sidebar content here -->
                 <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.order') }}">Orders</a></li>
-                <li><a href="{{ route('admin.tracking') }}">Tracking</a></li>
-                <li class="mt-auto"><a href="{{ route('logout') }}"">Logout</a></li>
+                <form action="{{ route('logout') }}" method="post" class="mt-auto">
+                    @csrf
+                    <button type="submit" class="btn btn-error">Logout</button>
+                </form>
             </ul>
         </div>
     </div>

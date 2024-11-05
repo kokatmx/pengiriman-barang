@@ -20,3 +20,9 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+
+# untuk file yang ingin di push
+!/.gitignore
+!/resources/*
+!/app/*
+!/database/*

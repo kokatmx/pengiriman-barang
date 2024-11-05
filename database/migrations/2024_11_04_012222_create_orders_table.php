@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('kode')->unique();
-            $table->string('detail_pengiriman');
-            $table->string('penerima');
-            $table->unsignedBigInteger('barang');
-            $table->enum('status', ['terkirim', 'diproses', 'dalam_perjalanan'])->default('diproses');
+            $table->string('code')->unique();
+            $table->unsignedBigInteger('user_id');
+            $table->string('sender_name');
+            $table->string('sender_phone');
+            $table->string('recipient_name');
+            $table->string('recipient_phone');
+            $table->string('recipient_address');
             $table->timestamps();
 
-            $table->foreign('barang')->references('nama_barang')->on('items')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
