@@ -22,6 +22,9 @@ Route::middleware(['cekRole'])->group(function () {
         Route::get('dashboard', function () {
             return view('admin.dashboard');
         })->name('admin.dashboard');
+        Route::get('orders', function () {
+            return view('admin.orders');
+        })->name('admin.orders');
     });
     Route::prefix('courier')->group(function () {
         Route::get('dashboard', function () {
